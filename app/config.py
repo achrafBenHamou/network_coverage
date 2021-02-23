@@ -1,6 +1,6 @@
 class Configuration():
-    """ if you have to add data with other providers, you can just add it in the dictionary,
-        also for networks,
+    """ if you need to add data with other network providers, you can just add its ids and names in the dictionary,
+        and the same thing for networks
     """
     data = '../data/file.csv'    # processed data path
 

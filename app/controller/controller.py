@@ -1,6 +1,6 @@
 from app.model.data_provider import getNetworkCoverage
 from app.service.entry_point import getAdressRessource
-from app.views.view import RessourcePresentation, getCityfromRessource
+from app.views.view import ressourcePresentation, getCityfromRessource
 
 
 def get_data(adress):
@@ -9,9 +9,7 @@ def get_data(adress):
     city = getCityfromRessource(ressource)
     #print(city)
     #ressource = getNetworkCoveragee(x,y)
-    ressource = getNetworkCoverage(city) # liste of
+    ressource = getNetworkCoverage(city)
     print('ressource',ressource)
-    response = RessourcePresentation(ressource)
+    response = ressourcePresentation(ressource)
     return response
-
-#t(get_data('20 Avenue de Ségur 75007 Paris'))
