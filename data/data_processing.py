@@ -1,7 +1,7 @@
 import pandas as pd
 import requests
 
-data = pd.read_csv("test.csv", delimiter=';') # Read CSV file
+data = pd.read_csv("2018_01_Sites_mobiles_2G_3G_4G_France_metropolitaine_L93.csv", delimiter=';') # Read CSV file
 data = data.dropna() # delete null values
 
 # convert lambert coordinates to GPS longitude and latitude
