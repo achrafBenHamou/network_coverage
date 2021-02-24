@@ -8,8 +8,13 @@ a city-level precision is enough.
 
 ## example of request 
 ```sh
-Get : http://127.0.0.1:5000/address/82 Rue des docteurs charcot 42100 st etienne 
-Result : { "Bouygues": { "2G": true, "3G": true, "4G": true }, "Free": { "2G": false, "3G": true, "4G": true }, "Orange": { "2G": true, "3G": true, "4G": true }, "SFR": { "2G": true, "3G": true, "4G": true } }
+Get : 
+          http://127.0.0.1:5000/address/82 Rue des docteurs charcot 42100 st etienne 
+Result : 
+         {"Bouygues": { "2G": true, "3G": true, "4G": true }, 
+          "Free": { "2G": false, "3G": true, "4G": true }, 
+          "Orange": { "2G": true, "3G": true, "4G": true }, 
+          "SFR": { "2G": true, "3G": true, "4G": true } }
 ```
 ## install requirements 
 Start the command :
@@ -19,7 +24,7 @@ pip install -r requirements.txt
 
 ## Data processing
 I used data_processing.py file to do the data processing.
-the goal of this script is to find the city through the Lambert93 X, Y coordinates.
+The goal of this script is to find the zip code through the Lambert93 X, Y coordinates.
 and eliminate any null values that exist in the data.
 At the end, the script will produce a new csv file which contains a new zip_code column.
 so that the API can find results faster, and without sending requests every time.
