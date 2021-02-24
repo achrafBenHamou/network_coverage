@@ -4,7 +4,6 @@ from app import config
 data_path = config.Configuration.data  # get Data path from config file
 nb_providers = len(config.Configuration.providers)  # get number of network providers from config file
 
-
 def getNetworkCoverage(zip_code):
     """ Input : zip code
         Output : list of csv rows that has the same zip code for each network provider  """

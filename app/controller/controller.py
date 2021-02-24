@@ -5,6 +5,8 @@ from app.views.view import getZipCodefromResource, resourcePresentation
 
 def get_data(address):
     resource = getAddressResource(address)         # get resource using Geo API
+    if resource == 0:
+        return {"result":"you don't introduce your adress"}
     zip_code = getZipCodefromResource(resource)    # get Zip Code from the response of Geo API
     resource = getNetworkCoverage(zip_code)        # get network coverage data of a city using its Zip code
     response = resourcePresentation(resource)      # reform resource presentation
