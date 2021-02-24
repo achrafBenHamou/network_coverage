@@ -37,6 +37,7 @@ python data_processing.py
 ## Run Project
 To run the project, use the following command :
 ```sh
+cd app
 python main.py
 ```
 ## Data source
