@@ -16,7 +16,7 @@ Result :
           "Orange": { "2G": true, "3G": true, "4G": true }, 
           "SFR": { "2G": true, "3G": true, "4G": true } }
 ```
-## install requirements 
+## Install requirements 
 Start the command :
 ```sh
 pip install -r requirements.txt
