@@ -6,6 +6,11 @@ in the response
 The goal is not to work on precise geographic match,
 a city-level precision is enough.
 
+## example of request 
+```sh
+Get : http://127.0.0.1:5000/address/82 Rue des docteurs charcot 42100 st etienne 
+Result : { "Bouygues": { "2G": true, "3G": true, "4G": true }, "Free": { "2G": false, "3G": true, "4G": true }, "Orange": { "2G": true, "3G": true, "4G": true }, "SFR": { "2G": true, "3G": true, "4G": true } }
+```
 ## install requirements 
 Start the command :
 ```sh
