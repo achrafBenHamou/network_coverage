@@ -2,7 +2,7 @@ import pandas as pd
 import requests
 
 # Read CSV file
-data = pd.read_csv("test.csv", delimiter=';')
+data = pd.read_csv("2018_01_Sites_mobiles_2G_3G_4G_France_metropolitaine_L93.csv", delimiter=';')
 data = data.dropna()  # delete null values
 
 
@@ -25,13 +25,15 @@ def getCodeZip(x, y):
     response = r.json()  # get response in Json format
     try:
         code_zip = response['features'][0]['properties']['postcode']
+        print("X=", x, "Y=", y, "====> zip_code=", code_zip)
         return code_zip
     except Exception as e:
-        print(e)
+        print("Zip code is not exist for this address. ", e)
         pass
 
-
+print("This process will take a time")
 print("processing Data .....")
+
 data['postcode'] = data.apply(lambda row: getCodeZip(row['X'], row['Y']), axis=1)  # find Zip code for each row
 data = data.dropna()  # delete null values
 data.to_csv('preprocessed_data.csv', sep=';', index=False)  # save new processed csv file

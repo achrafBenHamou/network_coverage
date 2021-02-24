@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.6
 from flask import Flask, jsonify
 
 app = Flask(__name__)
