@@ -1,5 +1,6 @@
 class Configuration():
-    """ if you need to add data with other network providers, you can just add its ids and names in the dictionary,
+    """ if you need to add data with other network providers,
+        you can just add its ids and names in the dictionary,
         and the same thing for networks
     """
     data = '../data/preprocessed_data.csv'    # processed data path
@@ -11,4 +12,4 @@ class Configuration():
                  20820: 'Bouygues'
                  }
 
-    networks = ["2G","3G","4G"] # list of networks
+    networks = ["2G", "3G", "4G"]   # list of networks
