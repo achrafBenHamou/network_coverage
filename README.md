@@ -6,7 +6,7 @@ in the response
 The goal is not to work on precise geographic match,
 a city-level precision is enough.
 
-## example of request 
+## Example of request 
 ```sh
 Get : 
           http://127.0.0.1:5000/address/82 Rue des docteurs charcot 42100 st etienne 
@@ -35,7 +35,7 @@ cd data
 python data_processing.py
 ```
 ## Run Project
-To run the project use the following command :
+To run the project, use the following command :
 ```sh
 python main.py
 ```
