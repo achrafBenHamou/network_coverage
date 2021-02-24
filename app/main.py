@@ -3,7 +3,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-#textual address request
+# textual address request
 @app.route('/address/<address>', methods=['GET'])
 def getAddress(address):
     from controller.controller import get_data  # get resource from controller
