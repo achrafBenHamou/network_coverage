@@ -17,12 +17,12 @@ pip install -r requirements.txt
 ```
 
 ## Data processing
-I used [data_processing.py](https://github.com/achrafBenHamou/network_coverage/blob/master/data/data_processing.py) file to do the data processing.
+I used [data_processing.py](https://github.com/achrafBenHamou/network_coverage/blob/master/data/data_processing.py) file to do the data processing.  
 The goal of this script is to find the zip code through the Lambert93 X, Y coordinates.
-and eliminate any null values that exist in the data.
-At the end, the script will produce a new csv file which contains a new zip_code column.
-so that the API can find results faster, and without sending requests every time.
-the resulting file is named: [preprocessed_data.csv](https://github.com/achrafBenHamou/network_coverage/blob/master/data/preprocessed_data.csv)
+and eliminate any null values that exist in the data.  
+At the end, the script will produce a new csv file which contains a new zip_code column.  
+so that the API can find results faster, and without sending requests every time.  
+The resulting file is named: [preprocessed_data.csv](https://github.com/achrafBenHamou/network_coverage/blob/master/data/preprocessed_data.csv).  
 To run the script again, run the following commands:
 ```sh
 cd data
@@ -35,7 +35,7 @@ cd app
 python3 main.py
 ```
 ## Example of request 
-If you want to test the api, you can use curl 
+If you want to test the api, you can use curl.     
 Example of request:
 ```sh
 curl http://127.0.0.1:5000/address/82 Rue des docteurs charcot 42100 st etienne 
