@@ -2,11 +2,19 @@
 import pandas as pd
 import requests
 
+""" file to do the data processing. 
+The goal of this script is to find the zip code through the Lambert93 X, Y coordinates.
+and eliminate any null values that exist in the data.
+At the end, the script will produce a new csv file which contains a new zip_code column. 
+so that the API can find results faster, and without sending requests every time.
+the resulting file is named: preprocessed_data.csv 
+"""
+
 # Read CSV file
 data = pd.read_csv("2018_01_Sites_mobiles_2G_3G_4G_France_metropolitaine_L93.csv", delimiter=';')
+
 # Delete null values
 data = data.dropna()
-
 
 # Convert from Lambert 93 to GPS coordinates
 def lambert_to_gps(x, y):
@@ -35,7 +43,6 @@ def get_code_zip(x, y):
 
 
 print("Data processing.....")
-
 data['postcode'] = data.apply(lambda row: get_code_zip(row['X'], row['Y']), axis=1)  # find Zip code for each row
 data = data.dropna()  # delete null values
 data.to_csv('preprocessed_data.csv', sep=';', index=False)  # save new processed csv file

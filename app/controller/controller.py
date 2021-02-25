@@ -1,13 +1,20 @@
-from app.model.data_provider import getNetworkCoverage
-from app.service.entry_point import getAddressResource
-from app.views.view import getZipCodefromResource, resourcePresentation
+from configuration import config
+from models.data_provider import getNetworkCoverage
+from service.entry_point import get_zip_code
+from views.view import ResourceRepresentation
+
+data_path   =  config.Configuration.data            # get Data path from config file
+api_address =  config.Configuration.api_address     # get api adress
+providers   =  config.Configuration.providers       # get number of network providers from config file
 
 
 def get_data(address):
-    resource = getAddressResource(address)         # get resource using Geo API
-    if resource == 0:
-        return {"result":"you don't introduce your adress"}
-    zip_code = getZipCodefromResource(resource)    # get Zip Code from the response of Geo API
-    resource = getNetworkCoverage(zip_code)        # get network coverage data of a city using its Zip code
-    response = resourcePresentation(resource)      # reform resource presentation
+    zip_code = get_zip_code(api_address,address)    # get Zip Code from the response of Geo API
+    if type(zip_code) is dict:                      # if zip code not finded, give response to user
+        response = zip_code
+        return response
+
+    # get network coverage data of a city using its Zip code
+    resource = getNetworkCoverage(zip_code,data_path,providers)
+    response = ResourceRepresentation(resource)
     return response

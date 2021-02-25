@@ -18,6 +18,10 @@ Result :
 ```
 ## Install requirements 
 Start the command :
+Install pip :
+```sh
+sudo apt install python3-pip
+```
 ```sh
 pip install -r requirements.txt
 ```
