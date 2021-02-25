@@ -22,7 +22,7 @@ The goal of this script is to find the zip code through the Lambert93 X, Y coord
 and eliminate any null values that exist in the data.  
 At the end, the script will produce a new csv file which contains a new zip_code column.  
 so that the API can find results faster, and without sending requests every time.  
-The resulting file is named: [preprocessed_data.csv](https://github.com/achrafBenHamou/network_coverage/blob/master/data/preprocessed_data.csv).  
+The resulted file is named: [preprocessed_data.csv](https://github.com/achrafBenHamou/network_coverage/blob/master/data/preprocessed_data.csv).  
 To run the script again, run the following commands:
 ```sh
 cd data
@@ -34,11 +34,16 @@ To run the project, use the following command:
 cd app
 python3 main.py
 ```
-## Example of request 
-If you want to test the api, you can use curl.     
+## Example of request  
 Example of request:
 ```sh
-curl http://127.0.0.1:5000/address/82 Rue des docteurs charcot 42100 st etienne 
+get : 
+http://127.0.0.1:5000/address/82 Rue des docteurs charcot 42100 st etienne
+```
+The request takes a textual address as parameter, if you want to use curl in command line, you need to replace space by %20.  
+Example with curl:  
+```sh
+curl http://127.0.0.1:5000/address/82%20Rue%20des%20docteurs%20charcot%2042100%20st%20etienne
 ```
 Example of response:
 ```sh
