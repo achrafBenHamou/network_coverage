@@ -1,6 +1,6 @@
 import requests
 
-# get resource from api using textual address
+# get resource from Geo api using textual address
 def get_zip_code(api_address,address):
     try:
         ploads = {'q': address}  # request parameter

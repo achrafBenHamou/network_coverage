@@ -1,7 +1,7 @@
 import csv
 from models.provider_coverage import ProviderCoverage
 
-def getNetworkCoverage(zip_code,data_path,providers):
+def getDataFromCsv(zip_code,data_path,providers):
     """ Input : zip code
         Output : list of ProviderCoverage objects"""
     with open(data_path, newline='') as csvfile:
@@ -10,7 +10,7 @@ def getNetworkCoverage(zip_code,data_path,providers):
         output = []
         id_providers = []
         for row in reader:           # Example of row: ['20801', '102980', '6847973', '1', '1', '0', '42100']
-            row = list(map(lambda x: int(float(x)), row)) # Transform all elements of row to integer
+            row = list(map(lambda x: int(float(x)), row)) # Transform all elements of row into integer
             if row[-1] == zip_code:  # zip code is in the last column of the row
                 if(row[0] not in id_providers):
                     if len(output) < len(providers):
@@ -21,7 +21,7 @@ def getNetworkCoverage(zip_code,data_path,providers):
                         provider_name = providers[row[0]]
                         provider.setName(provider_name)
 
-                        id_providers.append(provider.id)  # just for conrolling
+                        id_providers.append(provider.id)  # just for controlling
                         output.append(provider)           # add object to the output
                     else :
                         break

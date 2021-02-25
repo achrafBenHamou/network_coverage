@@ -1,7 +1,7 @@
 
 def ResourceRepresentation(Providers_data):
     """
-    this function takes list of ProviderCoverges objects as parameter
+    this function takes list of ProviderCoverge objects as parameter
     """
     if len(Providers_data) != 0:
         output = {}

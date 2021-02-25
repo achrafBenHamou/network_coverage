@@ -6,7 +6,7 @@ app = Flask(__name__)
 # textual address request
 @app.route('/address/<address>', methods=['GET'])
 def networkCoverage(address):
-    # get resource from controllers
+    # get resource from controller
     from controllers.controller import get_data
     return jsonify(get_data(address))
 

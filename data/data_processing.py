@@ -7,7 +7,7 @@ The goal of this script is to find the zip code through the Lambert93 X, Y coord
 and eliminate any null values that exist in the data.
 At the end, the script will produce a new csv file which contains a new zip_code column. 
 so that the API can find results faster, and without sending requests every time.
-the resulting file is named: preprocessed_data.csv 
+the resulted file is named: preprocessed_data.csv 
 """
 
 # Read CSV file
