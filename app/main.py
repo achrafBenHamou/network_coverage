@@ -5,9 +5,11 @@ app = Flask(__name__)
 
 # textual address request
 @app.route('/address/<address>', methods=['GET'])
-def getAddress(address):
-    from controller.controller import get_data  # get resource from controller
+def networkCoverage(address):
+    # get resource from controllers
+    from controllers.controller import get_data
     return jsonify(get_data(address))
 
 if __name__ == "__main__":
-    app.run(debug=True)  # Do not use debug in production deployment
+    # Do not use debug in production deployment
+    app.run(debug=True)

@@ -1,5 +1,4 @@
 import csv
-
 from models.provider_coverage import ProviderCoverage
 
 def getNetworkCoverage(zip_code,data_path,providers):
@@ -21,9 +20,9 @@ def getNetworkCoverage(zip_code,data_path,providers):
                         provider.setHas4G(row[5])
                         provider_name = providers[row[0]]
                         provider.setName(provider_name)
-                        # add ProviderCoverage object to list
-                        id_providers.append(provider.id)
-                        output.append(provider) # add object to the output
+
+                        id_providers.append(provider.id)  # just for conrolling
+                        output.append(provider)           # add object to the output
                     else :
                         break
         return output

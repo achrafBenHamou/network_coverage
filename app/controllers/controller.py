@@ -4,7 +4,7 @@ from service.entry_point import get_zip_code
 from views.view import ResourceRepresentation
 
 data_path   =  config.Configuration.data            # get Data path from config file
-api_address =  config.Configuration.api_address     # get api adress
+api_address =  config.Configuration.api_address     # get api adress from config file
 providers   =  config.Configuration.providers       # get number of network providers from config file
 
 
@@ -16,5 +16,5 @@ def get_data(address):
 
     # get network coverage data of a city using its Zip code
     resource = getNetworkCoverage(zip_code,data_path,providers)
-    response = ResourceRepresentation(resource)
+    response = ResourceRepresentation(resource)    # Transform data to dictionnary (json format)
     return response

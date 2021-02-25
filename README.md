@@ -16,12 +16,12 @@ Result :
           "Orange": { "2G": true, "3G": true, "4G": true }, 
           "SFR": { "2G": true, "3G": true, "4G": true } }
 ```
-## Install requirements 
-Start the command :
-Install pip :
+## Install requirements : Linux OS
+Firstly, you need to install pip :
 ```sh
 sudo apt install python3-pip
 ```
+To install project requirements, start the command :
 ```sh
 pip install -r requirements.txt
 ```
