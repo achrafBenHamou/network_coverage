@@ -1,5 +1,5 @@
 
-def ResourceRepresentation(Providers_data):
+def resource_representation(Providers_data):
     """
     this function takes list of ProviderCoverge objects as parameter
     """

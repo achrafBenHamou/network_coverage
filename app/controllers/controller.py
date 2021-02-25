@@ -1,7 +1,7 @@
 from configuration import config
-from models.data_provider import getDataFromCsv
+from models.data_provider import get_data_from_csv
 from service.entry_point import get_zip_code
-from views.view import ResourceRepresentation
+from views.view import resource_representation
 
 data_path   =  config.Configuration.data            # get Data path from config file
 api_address =  config.Configuration.api_address     # get api adress from config file
@@ -15,6 +15,6 @@ def get_data(address):
         return response
 
     # get network coverage data from csv of a city using its Zip code
-    resource = getDataFromCsv(zip_code, data_path, providers)
-    response = ResourceRepresentation(resource)    # Transform data to dictionnary (json format)
+    resource = get_data_from_csv(zip_code, data_path, providers)
+    response = resource_representation(resource)    # Transform data to dictionnary (json format)
     return response

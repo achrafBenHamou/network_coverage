@@ -1,7 +1,7 @@
 import csv
 from models.provider_coverage import ProviderCoverage
 
-def getDataFromCsv(zip_code,data_path,providers):
+def get_data_from_csv(zip_code,data_path,providers):
     """ Input : zip code
         Output : list of ProviderCoverage objects"""
     with open(data_path, newline='') as csvfile:
