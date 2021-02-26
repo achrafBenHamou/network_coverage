@@ -4,7 +4,9 @@ a textual address and retrieve 2G/3G/4G
 network coverage for each operator (if available)
 in the response
 The goal is not to work on precise geographic match,
-a city-level precision is enough.
+a city-level precision is enough.  
+The API returns the city level precision (the data may contain different coverage in different areas of the same city).
+for the satisfaction of customers (network operators), the API returns the best network coverage for each operator in a city
 
 ## Install requirements: Linux OS
 First, you need to install pip:
